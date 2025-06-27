@@ -1,0 +1,11 @@
+:queues:
+  - default
+  - mailers
+
+:scheduler:
+  :schedule:
+    stock_crawler:
+      cron: '0 6 * * 1-5'  # Run at 6 AM EST, Monday through Friday
+      class: StockCrawlerJob
+      queue: default
+      description: "Crawl stock data and generate videos" 
